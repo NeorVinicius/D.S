@@ -1,0 +1,15 @@
+<title>Exercício 1</title>
+<Script>
+
+    let onibus = [];
+    let continua = 'sim';
+
+    while(continua == 'sim'){
+        onibus.push(prompt('Informe nome do passageiro:'));
+        continua = prompt('Deseja subir mais alguém no ônibus? Sim/Não');
+    }
+    console.log('Passageiro do ônibus:');
+
+    onibus.forEach(function(passageiro) {console.log( passageiro )});
+
+</Script>

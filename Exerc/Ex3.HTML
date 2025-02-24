@@ -1,0 +1,13 @@
+<title>Exercício 3</title>
+<Script>
+    let Tarefas = [];
+    let continua = 'sim';
+
+    while(continua == 'sim'){
+        Tarefas.push(prompt('Informe uma tarefa:'));
+        continua = prompt('Deseja colocar mais tarefas? Sim/Não');
+    }
+    console.log('Tarefas:');
+
+    Tarefas.forEach(function(Tarefa) {console.log(Tarefa)});
+</Script>
