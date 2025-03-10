@@ -1,0 +1,21 @@
+<title>Exercício 1</title>
+<Script>
+/*
+crie um script no qual o usuário irá cadastrar o nome dos veículos.
+O usuário pode cadastrar quantos veículos que ele desejar.
+
+Ao finalizar ,exiba todos os veículos cadastrados em console.log().
+*/
+
+    let cadastro = [];
+    let continua = 'sim';
+
+    while(continua == 'sim'){
+        cadastro.push(prompt('Informe o veículo:'));
+        continua = prompt('Deseja adicionar mais um veículo? Sim/Não').toLowerCase();
+    }
+    console.log('Veículos:');
+
+    cadastro.forEach(function(cadastro) {console.log(cadastro)});
+
+</Script>

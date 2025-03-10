@@ -1,0 +1,33 @@
+<Script>
+    let veiculos = [];
+    let aerio = [];
+    let aquatico = [];
+    let terrestre = [];
+      
+    let continuar = 'sim';
+
+    continuar = 'sim';
+    while (continuar == 'sim') {
+        aerio.push(prompt('Informe o veículo aerio:'));
+        continuar = prompt('Deseja continuar no aerio? Sim/Não').toLowerCase();
+    }
+    continuar = 'sim';
+    while (continuar == 'sim') {
+        aquatico.push(prompt('Informe o veículo aquatico:'));
+        continuar = prompt('Deseja continuar no aquatico? Sim/Não').toLowerCase();
+    }
+    continuar = 'sim';
+    while (continuar == 'sim') {
+        terrestre.push(prompt('Informe o veículo terrestre:'));
+        continuar = prompt('Deseja continuar no terrestre? Sim/Não').toLowerCase();
+    }
+
+    veiculos.push(aerio)
+    veiculos.push(aquatico)
+    veiculos.push(terrestre)
+
+    console.log(veiculos);
+
+    
+
+</Script>
