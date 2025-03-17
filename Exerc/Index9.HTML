@@ -1,0 +1,16 @@
+<title>Exercício 9</title>
+<script>
+
+    let Nomes = [];
+    let Gols = [];
+    let Continuar = 'sim';
+
+    while (Continuar == 'sim') {
+        Nomes.push(prompt('Informe o nome:'));
+        Gols.push(parseInt(prompt('Quantidade de gols:')));
+        Continuar = prompt('Deseja adicionar mais um jogador? Sim/Não').toLowerCase();
+    }
+
+    Nomes.forEach(function(Nome, i){ console.log(Nome +': ' + Gols[i] + ' gol(s)' ); });
+
+</script>

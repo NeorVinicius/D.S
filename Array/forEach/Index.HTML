@@ -1,0 +1,12 @@
+<Script>
+    let armario = [];
+    let continuar = 'sim'
+
+    while(continuar == 'sim'){
+        armario.push(prompt('Nome do objeto:'));
+        continuar = prompt('Deseja adicionar outro objet?').toLowerCase();
+    }
+    armario.forEach(function(Item){ console.log(Item); });
+
+</Script>
+

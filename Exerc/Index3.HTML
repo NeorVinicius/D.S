@@ -1,0 +1,17 @@
+<title>Exercício 3</title>
+<Script>
+    let Tarefas = [];
+    let Continuar = 'sim';
+
+    while(Continuar == 'sim') {
+        Tarefas.push(prompt('Digite o nome da tarefa:'));
+        Continuar = prompt('Deseja cadastrar nova tarefa? sim/nao');
+    }
+    
+    console.log('Lista de Tarefas: ');
+
+    Tarefas.forEach(function(Tarefa) {
+        console.log(Tarefa);
+    });
+
+</Script>

@@ -1,0 +1,12 @@
+<title>Exercício 4</title>
+<Script>
+    let amigo = [];
+    let continuar = 'sim';
+
+    while (continuar == 'sim') {
+        amigo.push(prompt('Informe o nome:'));
+        continuar = prompt('Deseja adicionar outro amigo(a)? Sim/Não').toLowerCase();
+    }
+
+    amigo.forEach(function(Nome){ console.log('Meu amigo(a) se chama ' + Nome); });
+</Script>

@@ -1,22 +1,23 @@
-<title>Exercício 3</title>
+<title>Exercício 2</title>
 <Script>
     /*
-    Crie um script no qual o usuário irá digitar numeros.
-    Serão exibidos todos os números em ordem crescente.
+    Crie um script no qual contém um array com números.
+    Será perguntando ao usuário qual número deseja buscar e o sistema irá mostrar se encontrou ou não o número escolido.
     */
+
+   let sorte = [1, 2, 4, 5, 6, 8, 10,12 ,13 ,15 ,16];
+   let num = Number(prompt('Informe o numero:'));
+   let encontrou = false;
     
-    //  function (a, b) {
-    //      return a - b    --> Para numeros      numeros.sort(); --> Para texto
-    //   }
-    //);
-
-
-    const numeros = [50, 10, 25, 100, 90, ,70];
-    numeros.sort(
-        function (a, b) {
-            return a - b
+  for (let index = 0; index < sorte.length; index++) {
+        if (num == sorte[index]) {
+            encontrou = true;
         }
-    );
-    console.log(numeros);
+  }
+    if (!encontrou) {
+        alert('Numero encontrado!')
+    }else{
+        alert('Numero não encontrado')
+    }
 
 </Script>

@@ -1,33 +1,21 @@
+<title>Exercício 3</title>
 <Script>
-    let veiculos = [];
-    let aerio = [];
-    let aquatico = [];
-    let terrestre = [];
-      
-    let continuar = 'sim';
-
-    continuar = 'sim';
-    while (continuar == 'sim') {
-        aerio.push(prompt('Informe o veículo aerio:'));
-        continuar = prompt('Deseja continuar no aerio? Sim/Não').toLowerCase();
-    }
-    continuar = 'sim';
-    while (continuar == 'sim') {
-        aquatico.push(prompt('Informe o veículo aquatico:'));
-        continuar = prompt('Deseja continuar no aquatico? Sim/Não').toLowerCase();
-    }
-    continuar = 'sim';
-    while (continuar == 'sim') {
-        terrestre.push(prompt('Informe o veículo terrestre:'));
-        continuar = prompt('Deseja continuar no terrestre? Sim/Não').toLowerCase();
-    }
-
-    veiculos.push(aerio)
-    veiculos.push(aquatico)
-    veiculos.push(terrestre)
-
-    console.log(veiculos);
-
+    /*
+    Crie um script no qual o usuário irá digitar numeros.
+    Serão exibidos todos os números em ordem crescente.
+    */
     
+    //  function (a, b) {
+    //      return a - b    --> Para numeros      numeros.sort(); --> Para texto
+    //   }
+    //);
+
+    const numeros = [50, 10, 25, 100, 90, ,70];
+    numeros.sort(
+        function (a, b) {
+            return a - b
+        }
+    );
+    console.log(numeros);
 
 </Script>

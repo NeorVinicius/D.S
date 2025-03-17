@@ -1,0 +1,14 @@
+<title>Exercício 8</title>
+<script>
+
+    let Produtos = [];
+    let continuar = 'sim';
+
+    while (continuar == 'sim'){
+        Produtos.push(prompt('Informe seu produto de hoje:'));
+        continuar = prompt('Deseja adicionar algo mais?');   
+    };
+
+    Produtos.forEach(function(produto){ console.log(produto); });
+
+</script>

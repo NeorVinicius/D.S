@@ -1,21 +1,32 @@
-<title>Exercício 1</title>
+<title>Exemplo</title>
 <Script>
-/*
-crie um script no qual o usuário irá cadastrar o nome dos veículos.
-O usuário pode cadastrar quantos veículos que ele desejar.
+    let veiculos = [];
+    let aerio = [];
+    let aquatico = [];
+    let terrestre = [];
+      
+    let continuar = 'sim';
 
-Ao finalizar ,exiba todos os veículos cadastrados em console.log().
-*/
-
-    let cadastro = [];
-    let continua = 'sim';
-
-    while(continua == 'sim'){
-        cadastro.push(prompt('Informe o veículo:'));
-        continua = prompt('Deseja adicionar mais um veículo? Sim/Não').toLowerCase();
+    continuar = 'sim';
+    while (continuar == 'sim') {
+        aerio.push(prompt('Informe o veículo aerio:'));
+        continuar = prompt('Deseja continuar no aerio? Sim/Não').toLowerCase();
     }
-    console.log('Veículos:');
+    continuar = 'sim';
+    while (continuar == 'sim') {
+        aquatico.push(prompt('Informe o veículo aquatico:'));
+        continuar = prompt('Deseja continuar no aquatico? Sim/Não').toLowerCase();
+    }
+    continuar = 'sim';
+    while (continuar == 'sim') {
+        terrestre.push(prompt('Informe o veículo terrestre:'));
+        continuar = prompt('Deseja continuar no terrestre? Sim/Não').toLowerCase();
+    }
 
-    cadastro.forEach(function(cadastro) {console.log(cadastro)});
+    veiculos.push(aerio)
+    veiculos.push(aquatico)
+    veiculos.push(terrestre)
+
+    console.log(veiculos); 
 
 </Script>

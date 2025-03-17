@@ -1,23 +1,21 @@
-<title>Exercício 2</title>
+<title>Exercício 1</title>
 <Script>
-    /*
-    Crie um script no qual contém um array com números.
-    Será perguntando ao usuário qual número deseja buscar e o sistema irá mostrar se encontrou ou não o número escolido.
-    */
+/*
+crie um script no qual o usuário irá cadastrar o nome dos veículos.
+O usuário pode cadastrar quantos veículos que ele desejar.
 
-   let sorte = [1, 2, 4, 5, 6, 8, 10,12 ,13 ,15 ,16];
-   let num = Number(prompt('Informe o numero:'));
-   let encontrou = false;
-    
-  for (let index = 0; index < sorte.length; index++) {
-        if (num == sorte[index]) {
-            encontrou = true;
-        }
-  }
-    if (!encontrou) {
-        alert('Numero encontrado!')
-    }else{
-        alert('Numero não encontrado')
+Ao finalizar ,exiba todos os veículos cadastrados em console.log().
+*/
+
+    let cadastro = [];
+    let continua = 'sim';
+
+    while(continua == 'sim'){
+        cadastro.push(prompt('Informe o veículo:'));
+        continua = prompt('Deseja adicionar mais um veículo? Sim/Não').toLowerCase();
     }
+    console.log('Veículos:');
+
+    cadastro.forEach(function(cadastro) {console.log(cadastro)});
 
 </Script>
