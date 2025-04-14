@@ -1,0 +1,25 @@
+<Script>
+    let banho_tomado = false;
+    
+    verificarOndeEstou('cadeira', 'cama');
+
+    banhoTomado();
+
+    function  verificarOndeEstou(local) {
+          if (local == 'cadeira') {
+               levantar();
+          }
+          if (local == 'cama') {
+               levantar(); 
+          }
+     }
+
+
+    function  banhoTomado() {
+     if (banho_tomado == false) {
+          console.log('Tome banho');
+     }else{
+          console.log('Vai fazer o');
+     }
+    }
+</Script>

@@ -1,0 +1,34 @@
+<Script>
+     let lampada = false;
+     
+     verificarOndeEstou('cadeira', 'cama');
+     
+     irAoInterruptor();
+     
+     ligueLampada();
+
+     function  verificarOndeEstou(local) {
+          if (local == 'cadeira') {
+               levantar();
+          }
+          if (local == 'cama') {
+               levantar(); 
+          }
+     }
+     
+     function levantar() {
+          console.log('Levante');
+     }
+
+     function  irAoInterruptor() {
+          console.log('localize e dirija-se ao interruptor!');
+    }
+
+     function ligueLampada() {
+     if (lampada == false) {
+          console.log('Lampada acesa');
+     }else{
+          console.log('Lampada apagada');
+     }
+    }
+</Script>

@@ -1,13 +1,14 @@
 <!-- Return -->
 <Script>
     let valor_1 = Number(prompt("Digite o primeiro valor"));
-    let operador = prompt("Digite a operação desejada: + - * /");
+    let operador = prompt("Digite a operação desejada: + - / *");
 
     alert(showResult());
 
     function showResult() {
         return operador == '+' ? valor_1 + valor_1 : 'Operador Invalido';
-        return operador == '*' ? valor_1 * valor_1 : 'Operador Invalido';
+        return operador == '-' ? valor_1 - valor_1 : 'Operador Invalido';
         return operador == '/' ? valor_1 / valor_1 : 'Operador Invalido';
+        return operador == '*' ? valor_1 * valor_1 : 'Operador Invalido';
     }
 </Script>
