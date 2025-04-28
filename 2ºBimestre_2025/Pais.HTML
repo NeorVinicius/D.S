@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requisição de API</title>
+</head>
+<body>
+    <input type="text" id="input-search">
+
+    <button onclick="getCountry()">Consultar país</button>
+
+    <Script>
+        
+        function getCountry() {
+            let input_search = document.querySelector('#input-search');
+            let country = input_search.value;
+            let URL = `https://restcountries.com/v3.1/name/${country}`;
+            
+            fetch(URL)
+            .then( resp => resp.json() )
+            .then( dados => { console.log(dados); })
+            .catch(erro => { console.log(erro); })
+            .finally( () => { console.log('Requisição Finalizada!') })  
+        }
+
+    </Script>
+</body>
+</html>
