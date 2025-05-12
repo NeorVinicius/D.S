@@ -45,17 +45,57 @@
                 let capital = document.createElement('strong');
                 capital.innerText = country.capital;
                 
-                let fifa = document.createElement('strong');
-                capital.innerText = country.fifa;
+                let population = document.createElement('p');
+                population.innerText = country.population;
+
+                let fifa = document.createElement('h5');
+                fifa.innerText = country.fifa;
+               
+                let maps = document.createElement('a');
+                maps.setAttribute('href', country.maps.googleMaps);
+                maps.innerText = 'Maps';
+                
+                let continents = document.createElement('h6');
+                continents.innerText = country.continents;
+              
+                let region = document.createElement('h6');
+                region.innerText = country.region;
+                
+                let subregion = document.createElement('h6');
+                subregion.innerText = country.subregion;
+                
+                let borders = document.createElement('h6');
+                borders.style.wordBreak ="break-word";
+                borders.innerText = country.borders;
+                
+                let independent = document.createElement('h6');
+                independent.innerText = country.independent;
+               
+                let coatOfArms = document.createElement('img');
+                coatOfArms.setAttribute('src', country.coatOfArms.png);
+                coatOfArms.style.width = '35%';
+
+                let timezones = document.createElement('h6');
+                timezones.style.wordBreak ="break-word"
+                timezones.innerText = country.timezones;
 
                 let col = document.createElement('div');
                 col.classList.add("col-3");
-
+                
                 col.appendChild(img);
                 col.appendChild(title);
                 col.appendChild(subtitle);
                 col.appendChild(capital);
+                col.appendChild(population);
                 col.appendChild(fifa);
+                col.appendChild(maps);
+                col.appendChild(continents);
+                col.appendChild(region);
+                col.appendChild(subregion);
+                col.appendChild(borders);
+                col.appendChild(independent);
+                col.appendChild(coatOfArms);
+                col.appendChild(timezones);
                 countries_list.appendChild(col);
 
             }); })
@@ -64,8 +104,7 @@
         }
     </Script>
 
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-  </body>
+  
+    </body>
 </html>
