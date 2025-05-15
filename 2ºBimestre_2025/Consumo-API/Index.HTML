@@ -43,13 +43,24 @@
                 subtitle.innerText = country.name.official;
 
                 let capital = document.createElement('strong');
-                capital.innerText = country.capital;
+                if (country.capital == undefined) {
+                    capital.innerText = "No capital";
+                } else {
+                    capital.innerText = country.capital;
+                }
                 
                 let population = document.createElement('p');
                 population.innerText = country.population;
 
+                let altSpellings = document.createElement('h5');
+                altSpellings.style.wordBreak ="break-word"
+                altSpellings.innerText = country.altSpellings;
+
                 let fifa = document.createElement('h5');
                 fifa.innerText = country.fifa;
+                
+                let flag = document.createElement('h5');
+                flag.innerText = country.flag;
                
                 let maps = document.createElement('a');
                 maps.setAttribute('href', country.maps.googleMaps);
@@ -61,12 +72,19 @@
                 let region = document.createElement('h6');
                 region.innerText = country.region;
                 
+                let area = document.createElement('h6');
+                area.innerText = country.area;
+
                 let subregion = document.createElement('h6');
                 subregion.innerText = country.subregion;
                 
                 let borders = document.createElement('h6');
                 borders.style.wordBreak ="break-word";
-                borders.innerText = country.borders;
+                if (country.borders == undefined) {
+                    borders.innerText = "No borders";
+                } else {
+                    borders.innerText = country.borders;
+                }
                 
                 let independent = document.createElement('h6');
                 independent.innerText = country.independent;
@@ -85,9 +103,12 @@
                 col.appendChild(img);
                 col.appendChild(title);
                 col.appendChild(subtitle);
+                col.appendChild(altSpellings);
+                col.appendChild(area);
                 col.appendChild(capital);
                 col.appendChild(population);
                 col.appendChild(fifa);
+                col.appendChild(flag);
                 col.appendChild(maps);
                 col.appendChild(continents);
                 col.appendChild(region);
@@ -97,6 +118,8 @@
                 col.appendChild(coatOfArms);
                 col.appendChild(timezones);
                 countries_list.appendChild(col);
+
+                
 
             }); })
             .catch( erro => {console.log(erro); })
