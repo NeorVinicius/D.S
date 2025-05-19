@@ -57,7 +57,11 @@
                 altSpellings.innerText = country.altSpellings;
 
                 let fifa = document.createElement('h5');
-                fifa.innerText = country.fifa;
+                if (country.fifa == undefined) {
+                    fifa.innerText = "No fifa";
+                } else {
+                    fifa.innerText = country.fifa;
+                }
                 
                 let flag = document.createElement('h5');
                 flag.innerText = country.flag;
