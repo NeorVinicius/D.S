@@ -36,8 +36,24 @@
                 img.style.width = '100%';
                 img.style.borderRadius = '9px';
 
+                let latlng = document.createElement('iframe');
+                latlng.setAttribute('src',"https://www.google.com/maps?q=-15.79,-47.88&hl=pt-BR&z=6&output=embed" );
+                latlng.style.width = '75%';
+                latlng.style.borderRadius = '9px';
+                
+                // <iframe
+                //     src="https://www.google.com/maps?q=-15.79,-47.88&hl=pt-BR&z=6&output=embed" 
+                //     width="600" 
+                //     height="450" 
+                //     style="border:0;" 
+                //     allowfullscreen="" 
+                //     loading="lazy"
+                //     referrerpolicy="no-referrer-when-downgrade">
+                // </iframe>
+
                 let title = document.createElement('h2');
                 title.innerText = country.name.common;
+                
 
                 let subtitle = document.createElement('h3');
                 subtitle.innerText = country.name.official;
@@ -121,10 +137,10 @@
                 col.appendChild(independent);
                 col.appendChild(coatOfArms);
                 col.appendChild(timezones);
+                col.appendChild(latlng);
                 countries_list.appendChild(col);
 
                 
-
             }); })
             .catch( erro => {console.log(erro); })
             .finally( () => {console.log('Requisição Finalizada!'); })
