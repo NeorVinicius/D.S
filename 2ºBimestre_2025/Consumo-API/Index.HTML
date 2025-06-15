@@ -31,6 +31,7 @@
             fetch(`https://restcountries.com/v3.1/name/${input_search.value}`)
             .then( resp => resp.json() )
             .then( resp => {resp.forEach(country => {console.log(country) 
+                
                 let img = document.createElement('img');
                 img.setAttribute('src', country.flags.svg);
                 img.style.width = '100%';
