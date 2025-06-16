@@ -1,0 +1,22 @@
+/* day */
+
+.custom-nav {
+    background-color: indigo; 
+    outline: 1px solid ;
+}
+
+.navbar-brand{
+    color: fuchsia!important;
+}
+
+.nav-link{
+    color: fuchsia!important;
+}
+
+.dropdown-menu{
+    background-color: darkmagenta!important;
+}
+
+.dropdown-item {
+    color: fuchsia!important;
+}
