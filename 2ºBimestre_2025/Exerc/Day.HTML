@@ -9,7 +9,7 @@
 </head>
 <body>
  
-    <nav class="navbar navbar-expand-lg bg-body-tertiary"  style="outline: 1px solid ;">
+    <nav class="navbar navbar-expand-lg"  style="background-color: gainsboro; outline: 1px solid ;">
         <div class="container-fluid">
         <a class="navbar-brand" href="Day.HTML">Several days</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@
         </div>
     </nav>
 
-    <div class="container-fluid d-flex justify-content-center" id="day" style="padding: 20x;">
+    <div class="container-fluid d-flex justify-content-center flex-wrap" id="day" style="padding: 20x;">
         <div class="row">
 
         </div>
@@ -62,7 +62,7 @@
           img.setAttribute('src', photos.url);
           img.style.width = '50%';
           img.style.padding = '20px';
-          img.style.maxHeight = '50%'
+          img.style.maxHeight = '5000px';
 
           let colTitle = document.createElement('div');
           colTitle.classList.add('col-6');

@@ -9,7 +9,7 @@
 </head>
 <body>
  
-    <nav class="navbar navbar-expand-lg bg-body-tertiary"  style="outline: 1px solid ;">
+    <nav class="navbar navbar-expand-lg"  style="background-color: gainsboro; outline: 1px solid ;">
         <div class="container-fluid">
         <a class="navbar-brand" href="Mars.HTML">Mars</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,16 +38,42 @@
         </div>
         </div>
     </nav>
+
+    <div class="container-fluid d-flex justify-content-center" id="marte" style="padding: 20px;">
+        <div class="row">
+
+        </div>
+    </div>
  
     <Script>
-        function search() {
-        let ;}
+        let mars =  document.querySelector('#marte');
  
             fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=57r9nx7NtXch1eFW5IEMaREucaozILx4XNG9ZGJW`)
             .then( resp => resp.json() )
-            .then( resp => {resp.forEach(country => {console.log(country) }); })
-            .catch( erro => {console.log(erro); })
-            .finally( () => {console.log('Requisição Finalizada!'); })
+            .then( resp => {let photo = resp.photos;
+
+        for (let i = 0; i < 80 && i < photo.length; i++) {
+
+          let img = document.createElement('img');
+          img.setAttribute('src', photo[i].img_src);
+          img.style.width = '300px';
+          img.style.padding = '10px';
+          img.classList.add('img-fluid');
+
+          let texto = document.createElement('h6');
+          texto.innerHTML = photo[i].earth_date;
+
+          let col = document.createElement('div');
+
+          col.appendChild(img);
+          col.appendChild(texto);
+
+          mars.appendChild(col);
+
+        }
+      })
+      .catch(erro => {console.log(erro); })
+      .finally(() => {console.log('Requisição Finalizada'); })
     </Script>
  
  
