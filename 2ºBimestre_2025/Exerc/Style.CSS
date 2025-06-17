@@ -5,18 +5,28 @@
     outline: 1px solid ;
 }
 
-.navbar-brand{
+.navbar-brand {
     color: fuchsia!important;
 }
 
-.nav-link{
+.nav-link {
     color: fuchsia!important;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     background-color: darkmagenta!important;
 }
 
 .dropdown-item {
     color: fuchsia!important;
+}
+
+ @keyframes piscar {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; } 
+}
+
+.Imagem{
+    animation: piscar 5s infinite alternate;
 }
