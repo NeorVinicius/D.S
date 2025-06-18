@@ -40,7 +40,7 @@
         </div>
       </nav>
 
-      <div class="container col-12">
+      <div class="container">
         <div class="d-flex flex-wrap" id="earth">
 
         </div>
@@ -57,26 +57,32 @@
                     let name_img = elemento.image;
 
                     let date = elemento.date;
-                    // console.log(name_img);
 
-                    let link_img = `https://epic.gsfc.nasa.gov/archive/natural/${date.substr(0, 4)}/${date.substr(5, 2)}/${date.substr(8, 2)}/jpg/${name_img}.jpg`
+                    let link_img = `https://epic.gsfc.nasa.gov/archive/natural/${date.substr(0, 4)}/${date.substr(5, 2)}/${date.substr(8, 2)}/jpg/${name_img}.jpg`;
 
                     let data_info = document.createElement('h2');
-                data_info.innerText = `${elemento.date}`;
+                    data_info.innerText = `${elemento.date}`;
 
                     let col = document.createElement('div');
+                    col.style.display = 'flex';
                     col.style.padding = '20px';
                     col.style.margin = '10px';
+                    col.style.flexDirection = 'column';
+                    col.style.alignItems = 'center'; 
+                    col.style.textAlign = 'center';
 
                     let img = document.createElement('img');
                     img.setAttribute('src', link_img);
-                    img.style.height = '350px'
+                    img.style.height = '300px';
+                    img.style.width = '250px';
 
                     let position = document.createElement('p');
+                    position.style.wordBreak = "break-word";
                     position.innerHTML = `<strong>x:</strong> ${elemento.sun_j2000_position.x}<strong> y:</strong> ${elemento.sun_j2000_position.y} <br> <strong>z:</strong> ${elemento.sun_j2000_position.z}`;
-
+                    
                     let title = document.createElement('h6');
-                    title.innerText = `Sun Position: `
+                    title.style.wordBreak = "break-word";
+                    title.innerText = `Sun Position: `;
 
                     dscovr.appendChild(col);
 

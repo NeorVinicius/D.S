@@ -54,17 +54,23 @@
             .then( resp => {let photo = resp.photos;
 
         for (let i = 0; i < 80 && i < photo.length; i++) {
+          
+          let col = document.createElement('div');
+          col.style.display = 'flex';
+          col.style.margin = '10px';
+          col.style.flexDirection = 'column';
+          col.style.alignItems = 'center'; 
+          col.style.textAlign = 'center';
 
           let img = document.createElement('img');
           img.setAttribute('src', photo[i].img_src);
+          img.classList.add('img-fluid');
           img.style.width = '300px';
           img.style.padding = '10px';
-          img.classList.add('img-fluid');
 
           let texto = document.createElement('h6');
           texto.innerHTML = photo[i].earth_date;
 
-          let col = document.createElement('div');
 
           col.appendChild(img);
           col.appendChild(texto);

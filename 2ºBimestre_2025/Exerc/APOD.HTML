@@ -40,7 +40,7 @@
         </div>
       </nav>
 
-      <div class="container col-12">
+      <div class="container">
             <div class="d-flex flex-wrap" id="astronomy">
 
             </div>
@@ -55,18 +55,23 @@
               
           
             let col = document.createElement('div');
+            col.classList.add("col-12")
             col.style.display = 'flex';
             col.style.alignItems = 'center';
-            col.style.padding = '20px';
-            col.classList.add("col-12")
+            col.style.flexDirection = 'column';
+            col.style.textAlign = 'center';
 
             let img = document.createElement('img');
             img.setAttribute('src', resp.url);
-            img.style.width = '50%';
-            img.style.padding = '20px';
+            img.style.width = '100%';
+            img.style.maxWidth = '900px'; 
+            img.style.padding = '15px';
+            img.style.height = 'auto';
 
             let colTexto = document.createElement('div');
-            colTexto.classList.add("col-6");
+            colTexto.style.wordBreak = "break-word";
+            colTexto.classList.add('col-12');
+            colTexto.style.marginTop = '15px';
 
             let title = document.createElement('h1');
             title.innerText = resp.title;

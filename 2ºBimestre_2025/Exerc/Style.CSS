@@ -1,5 +1,3 @@
-/* day */
-
 .custom-nav {
     background-color: indigo; 
     outline: 1px solid ;
@@ -21,6 +19,13 @@
     color: fuchsia!important;
 }
 
+.d-block{
+    width: 100%;
+    height: 94vh;
+    position: relative;
+    z-index:5;
+}
+
  @keyframes piscar {
     0% { opacity: 1; }
     50% { opacity: 0; }
@@ -28,5 +33,9 @@
 }
 
 .Imagem{
+    width: 38%; 
+    height: 40%; 
+    position: absolute; 
+    z-index:6;
     animation: piscar 5s infinite alternate;
 }

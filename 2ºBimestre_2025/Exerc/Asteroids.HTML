@@ -40,7 +40,7 @@
         </div>
       </nav>
 
-      <div class="container col-12">
+      <div class="container">
             <div class="d-flex flex-wrap" id="upcoming_goals">
 
             </div>
@@ -55,18 +55,20 @@
 
           let object = resp.near_earth_objects;
 
-          // Itera sobre as chaves (datas)
           Object.keys(object).forEach(date => {
           console.log("Data:", date);
           console.log(object[date]);
-          // Itera sobre o array de objetos daquela data
+          
           object[date].forEach(asteroid => {
-          // console.log(asteroid.name);
 
           let col = document.createElement('div');
           col.classList.add("border", "border-1");
-          col.style.padding = '20px';
-          col.style.margin = '10px';
+          col.style.display = 'flex';
+          col.style.padding = '25px';
+          col.style.margin = '20px';
+          col.style.flexDirection = 'column';
+          col.style.alignItems = 'center'; 
+          col.style.textAlign = 'center';
 
           let nome = document.createElement('h2');
           nome.innerHTML = `<strong>${asteroid.name}</strong>`;
@@ -80,6 +82,7 @@
 
           let distance = asteroid.close_approach_data[0].miss_distance.kilometers;
           let Km = document.createElement('h5');
+          Km.style.wordBreak = "break-word";
           Km.innerHTML = ` Distance: ${distance} km`;
 
           objects.appendChild(col);

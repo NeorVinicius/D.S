@@ -40,11 +40,11 @@
         </div>
     </nav>
 
-    <div class="container-fluid d-flex justify-content-center flex-wrap" id="day" style="padding: 20x;">
-        <div class="row">
+        <div class="container">
+            <div class="d-flex flex-wrap" id="day">
 
+            </div>
         </div>
-    </div>
 
     <Script>
         let days =  document.querySelector('#day');
@@ -56,17 +56,22 @@
           let col = document.createElement('div')
           col.classList.add('col-12');
           col.style.display = 'flex';
-          col.style.alignItems = 'center';
+          col.style.flexDirection = 'column';
+          col.style.alignItems = 'center'; 
           col.style.padding = '30px';
+          col.style.textAlign = 'center';
 
           let img = document.createElement('img');
           img.setAttribute('src', photos.url);
-          img.style.width = '50%';
+          img.style.width = '100%'; 
+          img.style.maxWidth = '900px'; 
           img.style.padding = '20px';
-          img.style.maxHeight = '5000px';
-
+          img.style.height = 'auto'; 
+          
           let colTitle = document.createElement('div');
-          colTitle.classList.add('col-6');
+          colTitle.style.wordBreak = "break-word";
+          colTitle.classList.add('col-12');
+          colTitle.style.marginTop = '20px';
 
           let title = document.createElement('h1');
           title.innerText = photos.title;
