@@ -1,0 +1,22 @@
+<Script>
+    class Veiculo {
+        constructor(marca, modelo) {
+            this.marca = marca;
+            this.modelo = modelo;
+        }
+
+        acelerar() {
+            console.log(`${this.modelo} acelerou!!!`)
+        }
+        freiar() {
+            console.log(`${this.modelo} freiou!!!`)
+        }
+    }
+
+    let veiculo_1 = new Veiculo('Fiat', 'Uno 1994');
+    console.log(`Seu veículo ${veiculo_1.modelo}`)
+    veiculo_1.acelerar();
+    veiculo_1.freiar();
+    console.log(veiculo_1);
+    
+</Script>
