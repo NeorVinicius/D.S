@@ -1,9 +1,10 @@
+<title>Exercicio 1</title>
 <Script>
     class Pessoa {
         constructor(nome, idade, profissao) {
             this.nome = nome;
             this.idade = idade;
-            this.proficao = profissao;
+            this.profissao = profissao;
         }
 
         set nomeInd(nome) {
@@ -22,7 +23,7 @@
             return this.idade;
         }
 
-        set profissaoInd(proficao) {
+        set profissaoInd(profissao) {
             this.profissao = profissao;
         }
 
@@ -37,6 +38,4 @@
 
     let pessoa = new Pessoa('Diogo', 31, 'Programador');
     pessoa.apresentar();
-
-
 </Script>
