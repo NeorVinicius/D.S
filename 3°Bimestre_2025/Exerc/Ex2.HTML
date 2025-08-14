@@ -1,3 +1,4 @@
+<title>Exercicio 2</title>
 <Script>
     class ContaBancaria {
         constructor( titular, saldo, numero_conta) {
@@ -8,19 +9,19 @@
         }
 
         depositar(valor) {
-            return this.saldo + valor;
+            this.saldo = this.saldo + valor;
         }
         sacar(valor) {
-            return this.saldo - valor;
+            this.saldo = this.saldo - valor;
         }
-        exibirSaldo()
+        exibirSaldo() {
+            console.log(`Titular ${this.titular} | Saldo ${this.saldo} | Numero da conta ${this.numero_conta} `);
+        }
     }
 
-    let conta = new ContaBancaria();
-    conta.depositar(120);
-    conta.sacar(10);
+    let conta = new ContaBancaria('Diogo', 1500000, '009');
+    conta.depositar(15500);
+    conta.sacar(5000);
     conta.exibirSaldo();
-
-
 
 </Script>
