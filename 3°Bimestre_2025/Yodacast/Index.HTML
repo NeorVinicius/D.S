@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="PT-BR">
+<link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/Primo_Icons/PNG/128x128/help_black.png" type="image/x-icon">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yodacast</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="Style.CSS">
+  </head>
+  <body>
+
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center">
+            <div class="col-4">
+                <div class="card shadow p-3 m-2">
+                    <form>
+                        <div class="mb-3">
+                            <label for="pergunta">Qual é a sua pergunta?</label>
+                            <input type="text" name="pergunta" id="pergunta" placeholder="...">
+                        </div>
+                        <button class="btn btn-primary" onclick="perguntar()">Pergunta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center">
+            <div class="col-8">
+                <div class="card shadow p-2 m-2">Minha pegunta</div>
+                <div class="card shadow p-2 m-2">Resposta do Yoda</div>
+            </div>
+        </div>
+    </div>
+
+    <Script>
+        let pergunta = document.getElementById('pergunta').value;
+
+        const KEY = ``;
+        const URL = `https://api.openai.com/v1/chat/completions`;
+        
+        fetch(URL, {
+            method: 'POST', // POST, GET, DELETE, PUT
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${KEY}`
+            },
+            body: JSON.stringify({
+                model: 'gpt-4o-mini',
+                messages: [
+                    {role: 'system', content: 'Me responda como se você fosse o mestre Yoda, de forma curta e clara'},
+                    {role: 'user', content: pergunta},
+                ],
+                max_tokens: 50
+            })
+        })
+        .then( resp => resp.json() )
+        .then( resp => {
+            console.log(resp);
+        } )
+        .catch(erro => {
+            console.log(erro);
+        })
+        .finally(() =>{
+            console.log('Finalizado');
+        })
+
+    </Script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  </body>
+</html>
