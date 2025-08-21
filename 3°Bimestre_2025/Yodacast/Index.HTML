@@ -8,18 +8,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="Style.CSS">
   </head>
-  <body>
+  <body style="background: linear-gradient(to right, #1D8A75 0%, 12.340425699949265%, #2F6650 24.68085139989853%, 62.340425699949265%, #6B9F71 100%);">
 
     <div class="container-fluid">
         <div class="row d-flex justify-content-center">
-            <div class="col-4">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
                 <div class="card shadow p-3 m-2">
                     <form>
                         <div class="mb-3">
                             <label for="pergunta">Qual é a sua pergunta?</label>
                             <input type="text" name="pergunta" id="pergunta" placeholder="...">
                         </div>
-                        <button class="btn btn-primary" onclick="perguntar()">Pergunta</button>
+                        <button class="btn btn-success" onclick="perguntar()">Pergunta</button>
                     </form>
                 </div>
             </div>
@@ -29,11 +29,21 @@
     <div class="container-fluid">
         <div class="row d-flex justify-content-center">
             <div class="col-8">
-                <div class="card shadow p-2 m-2">Minha pegunta</div>
-                <div class="card shadow p-2 m-2">Resposta do Yoda</div>
+                <div class="card shadow p-2 m-2" style="height: 83vh;">
+                    <!-- Minha pergunta à direita -->
+                    <div class="bubble right shadow">
+                        Minha pergunta
+                    </div>
+
+                    <!-- Resposta do Yoda à esquerda -->
+                    <div class="bubble left shadow">
+                        Resposta do Yoda
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
 
     <Script>
         let pergunta = document.getElementById('pergunta').value;

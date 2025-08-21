@@ -1,4 +1,39 @@
 <title>Exercicio 3</title>
 <Script>
+    class ContaBancaria {
+        constructor( titular, saldo, numero_conta) {
+            this.titular = titular;
+            this.saldo = saldo;
+            this.numero_conta = numero_conta;
+
+        }
+
+        depositar(valor) {
+            this.saldo = this.saldo + valor;
+        }
+        sacar(valor) {
+            this.saldo = this.saldo - valor;
+        }
+        exibirSaldo() {
+            console.log(`Titular ${this.titular} | Saldo ${this.saldo} | Numero da conta ${this.numero_conta} |  Juros ${this.taxaJuros}`);
+        }
+    }
+    class ContaPoupanca extends ContaBancaria {
+        constructor(titular, saldo, numero_conta, taxaJuros) {
+            super(titular, saldo, numero_conta);
+            this.taxaJuros = taxaJuros;
+        }
+        
+        aplicarJuros(){
+            return this.saldo = this.saldo * (this.taxaJuros / 100);
+            console.log(`Juros de R$${this.saldo} aplicados!`);
+        }
+    }
     
+    let conta = new ContaPoupanca('Diogo', 525000, '02', '70');
+    conta.depositar(100);
+    conta.sacar(0);
+    conta.aplicarJuros(100);
+    conta.exibirSaldo();
+
 </Script>
