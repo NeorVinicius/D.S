@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="PT-BR">
-<link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/Primo_Icons/PNG/128x128/help_black.png" type="image/x-icon">
+<link rel="shortcut icon" href="https://cdn2.iconfinder.com/data/icons/social-media-iconez/64/WeChat-256.png" type="image/x-icon">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,13 +14,11 @@
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-sm-8 col-md-6 col-lg-4">
                 <div class="card shadow p-3 m-2">
-                    <form>
                         <div class="mb-3">
                             <label for="pergunta">Qual é a sua pergunta?</label>
                             <input type="text" name="pergunta" id="pergunta" placeholder="...">
                         </div>
                         <button class="btn btn-success" onclick="perguntar()">Pergunta</button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -29,54 +27,73 @@
     <div class="container-fluid">
         <div class="row d-flex justify-content-center">
             <div class="col-8">
-                <div class="card shadow p-2 m-2" style="height: 83vh;">
-                    <!-- Minha pergunta à direita -->
-                    <div class="bubble right shadow">
-                        Minha pergunta
-                    </div>
-
-                    <!-- Resposta do Yoda à esquerda -->
-                    <div class="bubble left shadow">
-                        Resposta do Yoda
+                <div class="card">
+                    <div class="card-body" style="height: 83vh;">
+                        <div class="row" id="chat">
+                            
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-
+    
     <Script>
-        let pergunta = document.getElementById('pergunta').value;
+        let chat = document.getElementById('chat');
 
-        const KEY = ``;
-        const URL = `https://api.openai.com/v1/chat/completions`;
-        
-        fetch(URL, {
-            method: 'POST', // POST, GET, DELETE, PUT
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${KEY}`
-            },
-            body: JSON.stringify({
-                model: 'gpt-4o-mini',
-                messages: [
-                    {role: 'system', content: 'Me responda como se você fosse o mestre Yoda, de forma curta e clara'},
-                    {role: 'user', content: pergunta},
-                ],
-                max_tokens: 50
+        function perguntar() {
+            let pergunta = document.getElementById('pergunta').value;
+    
+            const KEY = ``;
+            const URL = `https://api.openai.com/v1/chat/completions`;
+            
+            fetch(URL, {
+                method: 'POST', // POST, GET, DELETE, PUT
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${KEY}`
+                },
+                body: JSON.stringify({
+                    model: 'gpt-4o-mini',
+                    messages: [
+                        {role: 'system', content: 'Me responda como se você fosse o mestre Yoda, de forma curta e clara'},
+                        {role: 'user', content: pergunta},
+                    ],
+                    max_tokens: 50
+                })
             })
-        })
-        .then( resp => resp.json() )
-        .then( resp => {
-            console.log(resp);
-        } )
-        .catch(erro => {
-            console.log(erro);
-        })
-        .finally(() =>{
-            console.log('Finalizado');
-        })
+            .then( resp => resp.json() )
+            .then( resp => {
+                console.log(resp);
 
+                let col_perg = document.createElement('div');
+                col_perg .classList.add('col-12','d-flex','justify-content-end','Yoda');
+
+                let col_resp = document.createElement('div');
+                col_resp .classList.add('col-12','d-flex','justify-content-start');
+                
+                let card_perg = document.createElement('div');
+                card_perg .classList.add('card','p-2','m-1','shadow','perg_Yoda');
+                card_perg.innerText = pergunta;
+
+                let card_resp = document.createElement('div');
+                card_resp .classList.add('card','p-2','m-1','shadow','resp_Yoda');
+                card_resp.innerText = resp.choices[0].message.content;
+
+                col_perg.appendChild(card_perg);
+                col_resp.appendChild(card_resp);
+
+                chat.appendChild(col_perg);
+                chat.appendChild(col_resp);
+            } )
+            .catch(erro => {
+                console.log(erro);
+            })
+            .finally(() =>{
+                console.log('Finalizado');
+            })  
+        }
     </Script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>

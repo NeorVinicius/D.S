@@ -1,23 +1,20 @@
-.chat-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.bubble {
+.resp_Yoda{
+    align-self: flex-start;
     max-width: 70%;
     padding: 10px 15px;
     border-radius: 15px;
     margin: 5px;
-}
-
-.left {
-    align-self: flex-start;
     background-color: #D7D7D7;
     border-bottom-left-radius: 0;
 }
 
-.right {
+
+.perg_Yoda{
     align-self: flex-end;
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin: 5px;
     background-color: #DAFDBA;
     border-bottom-right-radius: 0;
 }
